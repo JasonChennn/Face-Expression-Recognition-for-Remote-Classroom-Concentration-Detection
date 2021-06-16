@@ -1,0 +1,1 @@
+python emotions.py --mode display
