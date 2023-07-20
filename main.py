@@ -15,14 +15,14 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 os.environ['CUDA_VISIBLE_DEVICES']='2, 3'
 
 # Training Detail
-dir_path = {'train': "data/train", 'test': "data/test"}
+dir_path = {'train': 'data/train', 'test': 'data/test'}
 num_train = 29690
 num_val = 8187
 batch_size = 64
 num_epoch = 100
 
 # Inference Detail
-emotion_label = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprised"}
+emotion_label = {0: 'Angry', 1: 'Disgusted', 2: 'Fearful', 3: 'Happy', 4: 'Neutral', 5: 'Sad', 6: 'Surprised'}
 face_score = 0
 point = {
     0:3,
@@ -98,16 +98,17 @@ def RealtimeDisplay(model):
             cropped_img = np.expand_dims(np.expand_dims(cv2.resize(roi_gray, (48, 48)), -1), 0)
             prediction = model.predict(cropped_img)
             max_index = int(np.argmax(prediction))
-            cv2.putText(frame, emotion_dict[max_index], (x+20, y-60), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+            cv2.putText(frame, emotion_label[max_index], (x+20, y-60), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
             face_score += point[max_index]
-
         cv2.imshow('Webacm', cv2.resize(frame,(800,600),interpolation = cv2.INTER_CUBIC))
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
     cap.release()
     cv2.destroyAllWindows()
+    if face_score >= 0: print('You are the state of concentration.')
+    else: print('You are in a state of distraction.')
 
 if __name__ == "__main__":
     model = Network()
-    #Train(model)
-    RealtimeDisplay(model)
+    Train(model)
+    #RealtimeDisplay(model)
