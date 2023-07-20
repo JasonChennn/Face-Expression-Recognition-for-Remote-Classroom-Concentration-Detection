@@ -90,7 +90,6 @@ def RealtimeDisplay(model):
         ret, frame = cap.read()
         if not ret:
             break
-        
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         faces = facecasc.detectMultiScale(gray,scaleFactor=1.3, minNeighbors=5)
         for (x, y, w, h) in faces:
