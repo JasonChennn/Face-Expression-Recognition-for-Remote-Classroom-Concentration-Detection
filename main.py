@@ -67,7 +67,7 @@ def Network():
     model.add(Flatten())
     model.add(Dense(1024, activation='relu'))
     model.add(Dropout(0.5))
-    model.add(Dense(8, activation='softmax'))
+    model.add(Dense(7, activation='softmax'))
     return model 
 
 def Train(model,train_generator):
@@ -79,7 +79,6 @@ def Train(model,train_generator):
             validation_data=validation_generator,
             validation_steps=num_val // batch_size)
     model.save_weights('models/model.h5')
-    plot_model_history(model_info)
 
 def RealtimeDisplay(model):
     model.load_weights('models/model.h5')
