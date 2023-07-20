@@ -26,7 +26,6 @@
 &emsp;&emsp;最高扣5分代表最分心，其次3分，最低1分；常理來說，正常上課是不會有笑容的，除非是觀看娛樂影片或者與同學的嬉鬧。
 ### 最終結果圓餅圖
 ![](https://i.imgur.com/ZLU6e3y.png)
-&emsp;&emsp;系統根據分數最後進行機率比值計算，取得專心與分心百分比次數，判斷最終結果。
 ## 參考文獻
 D Erhan, PL Carrier, A Courville, M Mirza, B Hamner, W Cukierski, Y Tang, DH Lee, Y Zhou, C Ramaiah, F Feng, R Li, X Wang, D Athanasakis, J Shawe-Taylor, M Milakov, J Park, R Ionescu, M Popescu, C Grozea, J Bergstra, J Xie, L Romaszko, B Xu, Z Chuang, and Y. Bengio. arXiv 2013.
 ## 附錄
