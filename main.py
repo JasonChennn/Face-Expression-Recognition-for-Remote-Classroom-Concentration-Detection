@@ -34,7 +34,7 @@ point = {
     6:1
 }
 
-def GetDataset(dirPath: dict):
+def GetDataset():
     # Define data generators
     train_datagen = ImageDataGenerator(rescale=1./255)
     val_datagen = ImageDataGenerator(rescale=1./255)
@@ -70,8 +70,9 @@ def Network():
     model.add(Dense(7, activation='softmax'))
     return model 
 
-def Train(model,train_generator):
-    model.compile(loss='categorical_crossentropy',optimizer=Adam(lr=0.0001, decay=1e-6),metrics=['accuracy'])
+def Train(model):
+    model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.0001, decay=1e-6),metrics=['accuracy'])
+    train_generator, validation_generator = GetDataset()
     model_info = model.fit_generator(
             train_generator,
             steps_per_epoch=num_train // batch_size,
