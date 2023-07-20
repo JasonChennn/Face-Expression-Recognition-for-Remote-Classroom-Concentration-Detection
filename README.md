@@ -33,4 +33,4 @@ D Erhan, PL Carrier, A Courville, M Mirza, B Hamner, W Cukierski, Y Tang, DH Lee
 ## 函式庫需求：
 * Python 3, [OpenCV](https://opencv.org/), [Tensorflow](https://www.tensorflow.org/)
 ### 資料集
-&emsp;&emsp;[[1] FER2013 dataset in Kaggle](https://www.kaggle.com/deadskull7/fer2013)
+&emsp;&emsp;[FER2013 dataset in Kaggle](https://www.kaggle.com/deadskull7/fer2013)
