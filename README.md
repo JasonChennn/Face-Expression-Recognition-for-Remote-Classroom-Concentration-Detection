@@ -88,36 +88,7 @@ D Erhan, PL Carrier, A Courville, M Mirza, B Hamner, W Cukierski, Y Tang, DH Lee
 ### 7.1 Python源碼
 #### 編譯器與函式庫需求：
 * Python 3, [OpenCV](https://opencv.org/), [Tensorflow](https://www.tensorflow.org/)
-* To install the required packages, run `pip install -r requirements.txt`.
-#### 檔案說明：
-* emotions(.py): 主程式，包含訓練資料及以及即時影像推論
-* alignment(.py): 人臉影像批次前處理，包含調整影像大小，人臉位置校正
-* rename_batch(.py): 批次重新命名，以便新增資料集使用
-* haarcascade_frontalface_default(.xml): 人臉特徵分類器
-* model(.h5): 我已訓練好的Model，為100回Epoch
-* train(.cmd): Windows OS指令集，進行訓練用
-* display(.cmd): Windows OS指令集，進行推論用
-
-#### 下載連結：
-https://github.com/M10915047/Face-Expression-Recognition-for-Remote-Classroom-Concentration-Detection
-
 ### 7.2 資料集及標註檔
 &emsp;&emsp;[[1] FER2013 dataset in Kaggle](https://www.kaggle.com/deadskull7/fer2013)
-&emsp;&emsp;[[2] 本人額外預處裡之資料集約三千張](https://drive.google.com/drive/folders/1Du7r1XYwi_d5mhFtFyHk5B-Z9PMjymOB?usp=sharing)
-
-### 附錄一: 推論(Colab版本)
-[Github下載連結](https://github.com/M10915047/Face-Expression-Recognition-for-Remote-Classroom-Concentration-Detection/tree/main/InferForColab)
-
-* 說明:我在Github準備了一個資料夾，專門提供給讀者可以在Colab上面執行，裡面共含了4個檔案，分別為：
-    1. inference.ipynb: 主程式源碼
-    2. haarcascade_frontalface_default.xml: 人臉分類器
-    3. model.h5: 已訓練好的模型
-    4. demo.mp4: 我個人提供的人臉短片提供推論
-    
-P.S. 請務必將上述檔案上傳至Colab的tmp資料夾裡面，或亦可自行修改源碼更改路徑。
 
 
----
-
-以下為演繹圖:
-![](https://i.imgur.com/PsgzgXa.png)
